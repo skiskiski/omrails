@@ -11,8 +11,7 @@
   <body>
 
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-dark bg-inverse">
-        <a class="navbar-brand" href="#">Full width</a>
+      <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
       <div class="container">
         <%= link_to "One Month Rails", root_path, class: "navbar-brand" %>
         <ul class="nav navbar-nav">
@@ -22,6 +21,11 @@
         </ul>
       </div>
     </nav>
+
+    <!-- Flash Messages -->
+    <% flash.each do |name, message| %>
+      <%= content_tag(:div, message, class: "alert alert-info #{name}") %>
+    <% end %>
 
     <!-- Page Content -->
     <%= yield %>
